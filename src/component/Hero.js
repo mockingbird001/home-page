@@ -3,6 +3,7 @@ import styled from "styled-components";
 import hero from "../img/hero.png";
 import background from "../img/bg.png";
 import Tilt from "react-tilt";
+import HeroText from "./HeroText";
 
 const Hero = () => {
   return (
@@ -10,7 +11,7 @@ const Hero = () => {
       <Wrapper>
         <InnerWrapper>
           <Left>
-            <h1>Hero</h1>
+            <HeroText />
           </Left>
           <TiltWrapper styled={{ max: 25 }}>
             <img src={hero} alt="hero" />
@@ -25,8 +26,9 @@ export default Hero;
 
 const TiltWrapper = styled(Tilt)`
   width: 60%;
+
   @media (max-width: 670px) {
-    width: 100%;
+    display: none;
   }
 `;
 
@@ -46,6 +48,7 @@ const Wrapper = styled.div`
   height: 100vh;
   width: 100vw;
   background-color: rgba(255, 255, 255, 0.9);
+
   @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
     -webkit-backdrop-filter: blur(35px);
     backdrop-filter: blur(35px);

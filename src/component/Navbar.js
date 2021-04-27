@@ -38,10 +38,12 @@ const Button = styled.button`
   transition: all 0.3s ease-in-out;
   margin-left: 0.5rem;
   cursor: pointer;
+
   &:hover {
     box-shadow: 0px 17px 16px -11px #ecb6d7;
     transform: translateY(-5px);
   }
+
   @media (max-width: 670px) {
     padding: 0.3;
   }
@@ -55,6 +57,7 @@ const MenuLink = styled.a`
   transition: all 0.2s ease-in;
   border-radius: 0.5rem;
   font-weight: 500;
+
   &:hover {
     color: #7781d4;
     background: #e7e9fc;
@@ -70,9 +73,11 @@ const Container = styled.div`
   margin: auto;
   width: 100%;
   padding: 2rem;
+
   svg {
     cursor: pointer;
   }
+
   a {
     text-decoration: none;
     color: #858586;
@@ -105,13 +110,8 @@ const Menu = styled.div`
   justify-content: space-between;
   align-items: center;
   position: relative;
+
   @media (max-width: 768px) {
-    background-color: rgba(255, 255, 255, 0.9);
-    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
-      -webkit-backdrop-filter: blur(35px);
-      backdrop-filter: blur(15px);
-      background-color: rgba(255, 255, 255, 0.4);
-    }
     border-radius: 1rem;
     margin-top: 1rem;
     box-shadow: -4px 8px 15px 1px rgba(0, 0, 0, 0.07);
@@ -120,6 +120,14 @@ const Menu = styled.div`
     max-height: ${({ isOpen }) => (isOpen ? "300px" : "0")};
     transition: max-height 0.3s ease-in;
     width: 100%;
+
+    background-color: rgba(255, 255, 255, 0.9);
+
+    @supports (-webkit-backdrop-filter: none) or (backdrop-filter: none) {
+      -webkit-backdrop-filter: blur(35px);
+      backdrop-filter: blur(35px);
+      background-color: rgba(255, 255, 255, 0.5);
+    }
   }
 `;
 
@@ -129,6 +137,7 @@ const LinkWrapper = styled.div`
   align-items: center;
   position: relative;
   padding: 1.5rem 0;
+
   @media (max-width: 768px) {
     flex-direction: column;
   }
@@ -138,6 +147,7 @@ const Hamburger = styled.div`
   display: none;
   flex-direction: column;
   cursor: pointer;
+
   span {
     height: 2px;
     width: 25px;
@@ -145,6 +155,7 @@ const Hamburger = styled.div`
     margin-bottom: 4px;
     border-radius: 5px;
   }
+
   @media (max-width: 768px) {
     display: flex;
   }
